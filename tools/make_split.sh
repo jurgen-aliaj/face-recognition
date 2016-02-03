@@ -14,3 +14,4 @@ for i in {110..119}
 do
 cp cropped/*_$i.* validation
 done
+mv training testing validation ../

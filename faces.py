@@ -28,7 +28,7 @@ def main(a, b, c):
 		im = np.asarray(misc.imread('validation/' + i)).flatten()
 		label = i.split('.')[0].split('_')[1 - face]
 		validation.append([im, label, i])
-	
+
 	testing = []
 
 	for i in list(os.walk('testing'))[0][2]:
@@ -84,23 +84,23 @@ def majority_label(L):
 
 def print_failures(L):
 	print [x for x in L if x[1] != x[-1]]
-	
+
 def find_accuracy(L):
-	return len([x for x in L if x[1] == x[-1]])/float(len(L))		
-	
+	return len([x for x in L if x[1] == x[-1]])/float(len(L))
+
 def dif(x, y):
 	x = x.astype(float)
-	y = y.astype(float)	
+	y = y.astype(float)
 	return np.sqrt(np.sum((x-y)**2))
-	
+
 if __name__ == '__main__':
-	
+
 	if len(sys.argv) != 4:
 		print 'Usage: ./faces.py face/gender training/validation/testing k, example: ./faces.py gender validation 2'
 		sys.exit()
-	
+
 	phase = sys.argv[2]
-	
+
 	if phase != 'training' and  phase != 'testing' and phase != 'validation':
 		print 'Usage: ./faces.py face/gender training/validation/testing k, example: ./faces.py face training 10'
 		sys.exit()
@@ -116,7 +116,7 @@ if __name__ == '__main__':
 		sys.exit()
 
 	face = sys.argv[1]
-	
+
 	if face != 'face' and face != 'gender':
 		print 'Usage: ./faces.py face/gender training/validation/testing k, example: ./faces.py gender testing 2'
 		sys.exit()
@@ -137,5 +137,5 @@ if __name__ == '__main__':
 	plt.axis([-10, 610, 0, 1.03])
 	plt.xlabel('k')
 	plt.ylabel('performance')
-	plt.title('Nearest Neighbour Performance for Various K')
+	plt.title('Predicting Face Labels With k-NN for Various k-values')
 	plt.show()
