@@ -57,7 +57,7 @@ def rgb2gray(rgb):
 testfile = urllib.URLopener()            
 
 
-#Note: you need to create the uncropped folder first in order 
+#Note: you need to create the cropped  and uncropped folder first in order 
 #for this to work
 
 for a in act:
@@ -65,6 +65,8 @@ for a in act:
     i = 0
     line_number = 0
     for line in open("faces_subset.txt"):
+	if i > 130:
+		break
 	line_number += 1
         if a in line:
 	    x = line.split()[-2].split(',')

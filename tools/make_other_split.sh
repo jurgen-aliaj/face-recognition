@@ -1,5 +1,4 @@
 #!/bin/bash
-mkdir training
 mkdir testing
 mkdir validation
 for i in {0..9}
@@ -11,4 +10,4 @@ else
 	cp others_cropped/*_$i.* validation
 fi
 done
-mv training testing validation ../
+mv testing validation ../

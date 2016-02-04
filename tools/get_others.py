@@ -57,7 +57,7 @@ def rgb2gray(rgb):
 testfile = urllib.URLopener()            
 
 
-#Note: you need to create the uncropped folder first in order 
+#Note: you need to create the others_cropped folder first in order 
 #for this to work
 
 for a in act:

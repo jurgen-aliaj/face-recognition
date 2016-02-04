@@ -137,5 +137,5 @@ if __name__ == '__main__':
 	plt.axis([-10, 610, 0, 1.03])
 	plt.xlabel('k')
 	plt.ylabel('performance')
-	plt.title('Predicting Face Labels With k-NN for Various k-values')
+	plt.title('Face Recognition With k-NN for Various k-values')
 	plt.show()
